@@ -39,8 +39,10 @@ passport.use(
     )
 );
 
+// ...
+
 passport.use(
-    'signup',
+    'login',
     new localStrategy(
         {
             usernameField: 'email',
@@ -48,11 +50,21 @@ passport.use(
         },
         async (email, password, done) => {
             try {
-                const user = await UserModel.create({ email, password });
+                const user = await UserModel.findOne({ email });
 
-                return done(null, user);
+                if (!user) {
+                    return done(null, false, { message: 'User not found' });
+                }
+
+                const validate = await user.isValidPassword(password);
+
+                if (!validate) {
+                    return done(null, false, { message: 'Wrong Password' });
+                }
+
+                return done(null, user, { message: 'Logged in Successfully' });
             } catch (error) {
-                done(error);
+                return done(error);
             }
         }
     )
