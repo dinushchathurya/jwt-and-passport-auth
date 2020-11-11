@@ -1,6 +1,6 @@
 # Passport JWT Auth
 
-In here, I have created authentication with Passport and JWT (JSON Web Token). In this application, I have only implemented Twitter, LinkedIn and GitHub Authentications.
+In here, I have created authentication with Passport and JWT (JSON Web Token). 
 
 ## Requirements
 
