@@ -18,7 +18,44 @@ To run this application,
 
 * Then run `nodemon app.js`
 
-* Then visit "http://localhost:3000"
+* Then you can test your API using application like postman 
+
+## API Testing
+
+### Signup
+
+Method: POST <br>
+URL:http://localhost:3000/signup <br>
+Body <br>
+x-www-form-urlencoded
+
+| Key           | Value              |
+| ------------- |:-------------:     |
+| email         | example@example.com|
+| password      | password           | 
+
+### Login
+
+Method: POST <br>
+URL:http://localhost:3000/login <br>
+Body <br>
+x-www-form-urlencoded
+
+| Key           | Value              |
+| ------------- |:-------------:     |
+| email         | example@example.com|
+| password      | password           | 
+
+### Profile
+
+Method: GET <br>
+URL:http://localhost:3000/user/profile <br>
+Params
+
+| Key         | Value         |
+| ------------|:-------------:|
+| secret_token| token         |
+
 
 ## Contact
 
